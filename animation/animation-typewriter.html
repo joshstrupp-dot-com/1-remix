@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poem with Typewriter Animation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Junge&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="base-styles.css" />
+    <style>
+      .poem {
+        display: flex;
+        flex-direction: row;
+        gap: 8em;
+        justify-content: center;
+        max-width: 90vw;
+        margin: 0 auto;
+      }
+
+      .stanza {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        align-items: flex-start;
+        max-width: 45vw;
+      }
+
+      .line {
+        display: flex;
+        gap: 0.5em;
+        justify-content: flex-start;
+        position: relative;
+        border-left: 2px solid black;
+        padding-left: 0.75em;
+      }
+
+      .word {
+        display: inline-block;
+        font-size: clamp(12px, 2vw, 22px);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 160%;
+        letter-spacing: -0.275px;
+        opacity: 0;
+        position: relative;
+        animation: typewriter 0.5s steps(1) forwards;
+      }
+
+      .word::after {
+        content: "|";
+        position: absolute;
+        right: -4px;
+        opacity: 0;
+        animation: cursorBlink 0.5s steps(2) forwards;
+      }
+
+      @keyframes typewriter {
+        0% {
+          opacity: 0;
+        }
+        20% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes cursorBlink {
+        0% {
+          opacity: 0;
+        }
+        20% {
+          opacity: 1;
+        }
+        80% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+
+      /* First stanza animations */
+      .stanza:nth-child(1) .line:nth-child(1) .word:nth-child(1) {
+        animation-delay: 0.5s;
+      }
+      .stanza:nth-child(1) .line:nth-child(1) .word:nth-child(1)::after {
+        animation-delay: 0.5s;
+      }
+
+      .stanza:nth-child(1) .line:nth-child(2) .word:nth-child(1) {
+        animation-delay: 1s;
+      }
+      .stanza:nth-child(1) .line:nth-child(2) .word:nth-child(2) {
+        animation-delay: 1.5s;
+      }
+      .stanza:nth-child(1) .line:nth-child(2) .word:nth-child(3) {
+        animation-delay: 2s;
+      }
+      .stanza:nth-child(1) .line:nth-child(2) .word:nth-child(4) {
+        animation-delay: 2.5s;
+      }
+
+      .stanza:nth-child(1) .line:nth-child(3) .word:nth-child(1) {
+        animation-delay: 3s;
+      }
+
+      .stanza:nth-child(1) .line:nth-child(4) .word:nth-child(1) {
+        animation-delay: 3.5s;
+      }
+      .stanza:nth-child(1) .line:nth-child(4) .word:nth-child(2) {
+        animation-delay: 4s;
+      }
+      .stanza:nth-child(1) .line:nth-child(4) .word:nth-child(3) {
+        animation-delay: 4.5s;
+      }
+      .stanza:nth-child(1) .line:nth-child(4) .word:nth-child(4) {
+        animation-delay: 5s;
+      }
+
+      .stanza:nth-child(1) .line:nth-child(5) .word:nth-child(1) {
+        animation-delay: 5.5s;
+      }
+
+      .stanza:nth-child(1) .line:nth-child(6) .word:nth-child(1) {
+        animation-delay: 6s;
+      }
+      .stanza:nth-child(1) .line:nth-child(6) .word:nth-child(2) {
+        animation-delay: 6.5s;
+      }
+      .stanza:nth-child(1) .line:nth-child(6) .word:nth-child(3) {
+        animation-delay: 7s;
+      }
+      .stanza:nth-child(1) .line:nth-child(6) .word:nth-child(4) {
+        animation-delay: 7.5s;
+      }
+
+      .stanza:nth-child(1) .line:nth-child(7) .word:nth-child(1) {
+        animation-delay: 8s;
+      }
+
+      .stanza:nth-child(1) .line:nth-child(8) .word:nth-child(1) {
+        animation-delay: 8.5s;
+      }
+      .stanza:nth-child(1) .line:nth-child(8) .word:nth-child(2) {
+        animation-delay: 9s;
+      }
+      .stanza:nth-child(1) .line:nth-child(8) .word:nth-child(3) {
+        animation-delay: 9.5s;
+      }
+      .stanza:nth-child(1) .line:nth-child(8) .word:nth-child(4) {
+        animation-delay: 10s;
+      }
+      .stanza:nth-child(1) .line:nth-child(8) .word:nth-child(5) {
+        animation-delay: 10.5s;
+      }
+      .stanza:nth-child(1) .line:nth-child(8) .word:nth-child(6) {
+        animation-delay: 11s;
+      }
+      .stanza:nth-child(1) .line:nth-child(8) .word:nth-child(7) {
+        animation-delay: 11.5s;
+      }
+
+      /* Add cursor animation delays for first stanza */
+      .stanza:nth-child(1) .word::after {
+        animation-duration: 0.5s;
+      }
+
+      .stanza:nth-child(1) .line:nth-child(2) .word:nth-child(1)::after {
+        animation-delay: 1s;
+      }
+      .stanza:nth-child(1) .line:nth-child(2) .word:nth-child(2)::after {
+        animation-delay: 1.5s;
+      }
+      .stanza:nth-child(1) .line:nth-child(2) .word:nth-child(3)::after {
+        animation-delay: 2s;
+      }
+      .stanza:nth-child(1) .line:nth-child(2) .word:nth-child(4)::after {
+        animation-delay: 2.5s;
+      }
+
+      .stanza:nth-child(1) .line:nth-child(3) .word:nth-child(1)::after {
+        animation-delay: 3s;
+      }
+
+      .stanza:nth-child(1) .line:nth-child(4) .word:nth-child(1)::after {
+        animation-delay: 3.5s;
+      }
+      .stanza:nth-child(1) .line:nth-child(4) .word:nth-child(2)::after {
+        animation-delay: 4s;
+      }
+      .stanza:nth-child(1) .line:nth-child(4) .word:nth-child(3)::after {
+        animation-delay: 4.5s;
+      }
+      .stanza:nth-child(1) .line:nth-child(4) .word:nth-child(4)::after {
+        animation-delay: 5s;
+      }
+
+      .stanza:nth-child(1) .line:nth-child(5) .word:nth-child(1)::after {
+        animation-delay: 5.5s;
+      }
+
+      .stanza:nth-child(1) .line:nth-child(6) .word:nth-child(1)::after {
+        animation-delay: 6s;
+      }
+      .stanza:nth-child(1) .line:nth-child(6) .word:nth-child(2)::after {
+        animation-delay: 6.5s;
+      }
+      .stanza:nth-child(1) .line:nth-child(6) .word:nth-child(3)::after {
+        animation-delay: 7s;
+      }
+      .stanza:nth-child(1) .line:nth-child(6) .word:nth-child(4)::after {
+        animation-delay: 7.5s;
+      }
+
+      .stanza:nth-child(1) .line:nth-child(7) .word:nth-child(1)::after {
+        animation-delay: 8s;
+      }
+
+      .stanza:nth-child(1) .line:nth-child(8) .word:nth-child(1)::after {
+        animation-delay: 8.5s;
+      }
+      .stanza:nth-child(1) .line:nth-child(8) .word:nth-child(2)::after {
+        animation-delay: 9s;
+      }
+      .stanza:nth-child(1) .line:nth-child(8) .word:nth-child(3)::after {
+        animation-delay: 9.5s;
+      }
+      .stanza:nth-child(1) .line:nth-child(8) .word:nth-child(4)::after {
+        animation-delay: 10s;
+      }
+      .stanza:nth-child(1) .line:nth-child(8) .word:nth-child(5)::after {
+        animation-delay: 10.5s;
+      }
+      .stanza:nth-child(1) .line:nth-child(8) .word:nth-child(6)::after {
+        animation-delay: 11s;
+      }
+      .stanza:nth-child(1) .line:nth-child(8) .word:nth-child(7)::after {
+        animation-delay: 11.5s;
+      }
+
+      /* Second stanza animations - faster typing */
+      .stanza:nth-child(2) .word {
+        animation-duration: 0.25s;
+      }
+
+      /* Add cursor animation delays for second stanza */
+      .stanza:nth-child(2) .word::after {
+        animation-duration: 0.25s;
+      }
+
+      .stanza:nth-child(2) .line:nth-child(1) .word:nth-child(1)::after {
+        animation-delay: 12s;
+      }
+
+      .stanza:nth-child(2) .line:nth-child(2) .word:nth-child(1)::after {
+        animation-delay: 12.25s;
+      }
+      .stanza:nth-child(2) .line:nth-child(2) .word:nth-child(2)::after {
+        animation-delay: 12.5s;
+      }
+      .stanza:nth-child(2) .line:nth-child(2) .word:nth-child(3)::after {
+        animation-delay: 12.75s;
+      }
+      .stanza:nth-child(2) .line:nth-child(2) .word:nth-child(4)::after {
+        animation-delay: 13s;
+      }
+      .stanza:nth-child(2) .line:nth-child(2) .word:nth-child(5)::after {
+        animation-delay: 13.25s;
+      }
+      .stanza:nth-child(2) .line:nth-child(2) .word:nth-child(6)::after {
+        animation-delay: 13.5s;
+      }
+
+      .stanza:nth-child(2) .line:nth-child(3) .word:nth-child(1)::after {
+        animation-delay: 13.75s;
+      }
+
+      .stanza:nth-child(2) .line:nth-child(4) .word:nth-child(1)::after {
+        animation-delay: 14s;
+      }
+      .stanza:nth-child(2) .line:nth-child(4) .word:nth-child(2)::after {
+        animation-delay: 14.25s;
+      }
+      .stanza:nth-child(2) .line:nth-child(4) .word:nth-child(3)::after {
+        animation-delay: 14.5s;
+      }
+      .stanza:nth-child(2) .line:nth-child(4) .word:nth-child(4)::after {
+        animation-delay: 14.75s;
+      }
+      .stanza:nth-child(2) .line:nth-child(4) .word:nth-child(5)::after {
+        animation-delay: 15s;
+      }
+      .stanza:nth-child(2) .line:nth-child(4) .word:nth-child(6)::after {
+        animation-delay: 15.25s;
+      }
+
+      .stanza:nth-child(2) .line:nth-child(5) .word:nth-child(1)::after {
+        animation-delay: 15.5s;
+      }
+
+      .stanza:nth-child(2) .line:nth-child(6) .word:nth-child(1)::after {
+        animation-delay: 15.75s;
+      }
+      .stanza:nth-child(2) .line:nth-child(6) .word:nth-child(2)::after {
+        animation-delay: 16s;
+      }
+      .stanza:nth-child(2) .line:nth-child(6) .word:nth-child(3)::after {
+        animation-delay: 16.25s;
+      }
+      .stanza:nth-child(2) .line:nth-child(6) .word:nth-child(4)::after {
+        animation-delay: 16.5s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-left">
+        <div>"High Art" by Terence G. Craddock</div>
+      </div>
+      <div>Animation / Typewriter</div>
+    </div>
+    <div class="poem">
+      <div class="stanza">
+        <div class="line">
+          <div class="word">critic</div>
+        </div>
+        <div class="line">
+          <div class="word">might</div>
+          <div class="word">imply</div>
+          <div class="word">an</div>
+          <div class="word">artist</div>
+        </div>
+        <div class="line">
+          <div class="word">due</div>
+        </div>
+        <div class="line">
+          <div class="word">to</div>
+          <div class="word">hand</div>
+          <div class="word">creator</div>
+          <div class="word">responsibility</div>
+        </div>
+        <div class="line">
+          <div class="word">must</div>
+        </div>
+        <div class="line">
+          <div class="word">strieve</div>
+          <div class="word">for</div>
+          <div class="word">reaction</div>
+          <div class="word">required</div>
+        </div>
+        <div class="line">
+          <div class="word">art</div>
+        </div>
+        <div class="line">
+          <div class="word">itself</div>
+          <div class="word">at</div>
+          <div class="word">bedrock</div>
+          <div class="word">is</div>
+          <div class="word">but</div>
+          <div class="word">an</div>
+          <div class="word">activity</div>
+        </div>
+      </div>
+
+      <div class="stanza">
+        <div class="line">
+          <div class="word">but</div>
+        </div>
+        <div class="line">
+          <div class="word">high</div>
+          <div class="word">art</div>
+          <div class="word">investment</div>
+          <div class="word">trend</div>
+          <div class="word">hot</div>
+          <div class="word">art</div>
+        </div>
+        <div class="line">
+          <div class="word">speculative</div>
+        </div>
+        <div class="line">
+          <div class="word">is</div>
+          <div class="word">hedge</div>
+          <div class="word">betting</div>
+          <div class="word">on</div>
+          <div class="word">banked</div>
+          <div class="word">futures</div>
+        </div>
+        <div class="line">
+          <div class="word">purchases</div>
+        </div>
+        <div class="line">
+          <div class="word">calculated</div>
+          <div class="word">as</div>
+          <div class="word">serious</div>
+          <div class="word">investment</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div>Assignment #1: Remix</div>
+      <div class="footer-right">
+        By me, <a href="https://joshstrupp.com" target="_blank">Josh</a>
+      </div>
+    </div>
+  </body>
+</html>

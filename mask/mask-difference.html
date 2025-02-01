@@ -3,15 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Poem</title>
+    <title>Poem with Blend Modes</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Junge&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Junge&family=Roboto:wght@900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="base-styles.css" />
     <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: white;
+      }
+
+      .word {
+        display: inline-block;
+        /* min: 14px, preferred: 2.2% of viewport width, max: 28px */
+        font-size: clamp(12px, 2vw, 22px);
+        font-family: "Junge", serif;
+        font-weight: 900;
+        line-height: 160%;
+        letter-spacing: -0.275px;
+        color: black;
+      }
+
+      .line {
+        display: flex;
+        gap: 0.5em;
+        justify-content: flex-start;
+        position: relative;
+        border-left: 2px solid black;
+        padding-left: 0.75em;
+      }
+
       .poem {
         display: flex;
         flex-direction: row;
@@ -27,107 +53,37 @@
         flex: 1;
         align-items: flex-start;
         max-width: 45vw;
-      }
-
-      .line {
-        display: flex;
-        gap: 0.5em;
-        justify-content: flex-start;
         position: relative;
-        border-left: 2px solid black;
-        padding-left: 0.75em;
       }
 
-      .word {
-        display: inline-block;
-        /* min: 14px, preferred: 2.2% of viewport width, max: 28px */
-        font-size: clamp(12px, 2vw, 22px);
-        font-style: normal;
-        font-weight: 400;
-        line-height: 160%;
-        letter-spacing: -0.275px;
+      /* Black box and blend mode styles for second stanza */
+      .stanza:nth-child(2) {
         position: relative;
-        z-index: 2;
       }
 
-      .masked-word {
-        position: relative;
-        display: inline-block;
-      }
-
-      .masked-word .word {
-        mix-blend-mode: overlay;
-        color: #ffffff;
-        text-shadow: 3px 3px 10px #000000;
-        text-decoration: underline;
-      }
-
-      .background-image {
+      .stanza:nth-child(2)::before {
+        content: "";
         position: absolute;
-        top: 50%;
-        left: 55%;
-        transform: translate(-50%, -50%);
+        top: -2em;
+        left: -2em;
+        right: -2em;
+        bottom: -2em;
+        background: black;
         z-index: -1;
-        width: clamp(100px, 15vw, 200px);
-        opacity: 0.95;
-        clip-path: inset(25% 0 25% 30%);
       }
 
-      .background-image-2 {
-        position: absolute;
-        top: 50%;
-        left: 70%;
-        transform: translate(-50%, -50%);
-        z-index: -1;
-        width: clamp(80px, 20vw, 200px);
-        opacity: 0.95;
-        clip-path: inset(20% 0 20% 0);
+      .stanza:nth-child(2) .word {
+        color: white;
+        mix-blend-mode: difference;
       }
 
-      .background-image-3 {
-        position: absolute;
-        top: 50%;
-        left: 30%;
-        transform: translate(-50%, -50%);
-        z-index: -10;
-        /* Sets responsive width:
-           - Minimum: 100px
-           - Preferred: 25% of viewport width 
-           - Maximum: 250px */
-        width: clamp(25vw, 100vw, 250px);
-        opacity: 0.95;
+      .stanza:nth-child(2) .line {
+        border-left: 2px solid white;
       }
 
-      @media screen and (max-width: 768px) {
-        .background-image {
-          width: clamp(80px, 25vw, 150px);
-          clip-path: inset(20% 0 20% 25%);
-        }
-
-        .background-image-2 {
-          width: clamp(60px, 25vw, 150px);
-          clip-path: inset(15% 0 15% 0);
-        }
-
-        .background-image-3 {
-          width: clamp(60px, 25vw, 150px);
-        }
-      }
-
-      @media screen and (max-width: 480px) {
-        .background-image {
-          width: clamp(60px, 30vw, 100px);
-          clip-path: inset(15% 0 15% 20%);
-        }
-
-        .background-image-2 {
-          width: clamp(50px, 30vw, 100px);
-          clip-path: inset(10% 0 10% 0);
-        }
-
-        .background-image-3 {
-          width: clamp(50px, 30vw, 100px);
-        }
+      .header,
+      .footer {
+        color: black;
       }
     </style>
   </head>
@@ -136,7 +92,7 @@
       <div class="header-left">
         <div>"High Art" by Terence G. Craddock</div>
       </div>
-      <div>Blend / Art</div>
+      <div>Blend / Difference</div>
     </div>
     <div class="poem">
       <div class="stanza">
@@ -147,10 +103,7 @@
           <div class="word">might</div>
           <div class="word">imply</div>
           <div class="word">an</div>
-          <div class="masked-word">
-            <div class="word">artist</div>
-            <img src="assets/paint.jpg" class="background-image" alt="" />
-          </div>
+          <div class="word">artist</div>
         </div>
         <div class="line">
           <div class="word">due</div>
@@ -178,12 +131,9 @@
           <div class="word">at</div>
           <div class="word">bedrock</div>
           <div class="word">is</div>
-          <div class="masked-word">
-            <div class="word">but</div>
-            <div class="word">an</div>
-            <div class="word">activity</div>
-            <img src="assets/dust.png" class="background-image-2" alt="" />
-          </div>
+          <div class="word">but</div>
+          <div class="word">an</div>
+          <div class="word">activity</div>
         </div>
       </div>
 
@@ -192,12 +142,9 @@
           <div class="word">but</div>
         </div>
         <div class="line">
-          <div class="masked-word">
-            <div class="word">high</div>
-            <div class="word">art</div>
-            <div class="word">investment</div>
-            <img src="assets/jab.jpg" class="background-image-3" alt="" />
-          </div>
+          <div class="word">high</div>
+          <div class="word">art</div>
+          <div class="word">investment</div>
           <div class="word">trend</div>
           <div class="word">hot</div>
           <div class="word">art</div>

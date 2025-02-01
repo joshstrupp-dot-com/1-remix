@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poem Variety</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Junge&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="base-styles.css" />
+    <style>
+      .container {
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        padding: 20px;
+      }
+
+      .stanza-left {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-family: Junge;
+        font-size: 20px;
+        line-height: 182%;
+        letter-spacing: -0.22px;
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+
+      .stanza-left p {
+        margin: 0;
+        padding: 0;
+      }
+
+      .stanza-right {
+        width: 45%;
+        right: 5%;
+        position: relative;
+        font-family: Junge;
+        font-size: 20px;
+        height: 95vh;
+        padding-left: 15%;
+        padding-right: 5%;
+      }
+
+      .scattered-word {
+        position: absolute;
+        transform-origin: center;
+        transition: all 0.5s ease;
+      }
+
+      .scattered-word:hover {
+        transform: scale(1.2) rotate(0deg) !important;
+        z-index: 1;
+      }
+
+      /* Scattered word positions */
+      #word1 {
+        top: 15%;
+        left: 20%;
+        transform: rotate(-15deg);
+      }
+      #word2 {
+        top: 45%;
+        left: 65%;
+        transform: rotate(8deg);
+      }
+      #word3 {
+        top: 75%;
+        left: 30%;
+        transform: rotate(-5deg);
+      }
+      #word4 {
+        top: 25%;
+        left: 70%;
+        transform: rotate(12deg);
+      }
+      #word5 {
+        top: 60%;
+        left: 15%;
+        transform: rotate(-20deg);
+      }
+      #word6 {
+        top: 85%;
+        left: 60%;
+        transform: rotate(15deg);
+      }
+      #word7 {
+        top: 35%;
+        left: 40%;
+        transform: rotate(-8deg);
+      }
+      #word8 {
+        top: 10%;
+        left: 45%;
+        transform: rotate(10deg);
+      }
+      #word9 {
+        top: 50%;
+        left: 75%;
+        transform: rotate(-12deg);
+      }
+      #word10 {
+        top: 70%;
+        left: 25%;
+        transform: rotate(18deg);
+      }
+      #word11 {
+        top: 90%;
+        left: 40%;
+        transform: rotate(-15deg);
+      }
+      #word12 {
+        top: 20%;
+        left: 85%;
+        transform: rotate(5deg);
+      }
+      #word13 {
+        top: 40%;
+        left: 20%;
+        transform: rotate(-10deg);
+      }
+      #word14 {
+        top: 55%;
+        left: 35%;
+        transform: rotate(22deg);
+      }
+      #word15 {
+        top: 82%;
+        left: 70%;
+        transform: rotate(-18deg);
+      }
+      #word16 {
+        top: 28%;
+        left: 55%;
+        transform: rotate(15deg);
+      }
+      #word17 {
+        top: 65%;
+        left: 80%;
+        transform: rotate(-25deg);
+      }
+      #word18 {
+        top: 15%;
+        left: 30%;
+        transform: rotate(12deg);
+      }
+      #word19 {
+        top: 72%;
+        left: 45%;
+        transform: rotate(-8deg);
+      }
+      #word20 {
+        top: 38%;
+        left: 75%;
+        transform: rotate(20deg);
+      }
+      #word21 {
+        top: 88%;
+        left: 25%;
+        transform: rotate(-22deg);
+      }
+      #word22 {
+        top: 42%;
+        left: 50%;
+        transform: rotate(16deg);
+      }
+      #word23 {
+        top: 78%;
+        left: 15%;
+        transform: rotate(-14deg);
+      }
+      #word24 {
+        top: 22%;
+        left: 65%;
+        transform: rotate(10deg);
+      }
+      #word25 {
+        top: 95%;
+        left: 55%;
+        transform: rotate(-20deg);
+      }
+
+      @media screen and (max-width: 768px) {
+        .container {
+          flex-direction: column;
+          align-items: center;
+          gap: 4em;
+        }
+
+        .stanza-right {
+          position: relative;
+          width: 100%;
+          height: 60vh;
+          margin-top: 2em;
+        }
+
+        .stanza-left {
+          width: 90%;
+          max-width: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-left">
+        <div>"High Art" by Terence G. Craddock</div>
+      </div>
+      <div>Position / Variety</div>
+    </div>
+
+    <div class="container">
+      <!-- Left stanza - orderly -->
+      <div class="stanza-left">
+        <p>
+          critic<br />
+          might imply an artist<br />
+          due<br />
+          to hand creator responsibility<br />
+          must<br />
+          strive for reaction required<br />
+          art<br />
+          itself at bedrock is but an activity
+        </p>
+      </div>
+
+      <!-- Right stanza - scattered -->
+      <div class="stanza-right">
+        <span class="scattered-word" id="word1">but</span>
+        <span class="scattered-word" id="word2">high</span>
+        <span class="scattered-word" id="word3">art</span>
+        <span class="scattered-word" id="word4">investment</span>
+        <span class="scattered-word" id="word5">trend</span>
+        <span class="scattered-word" id="word6">hot</span>
+        <span class="scattered-word" id="word7">art</span>
+        <span class="scattered-word" id="word8">speculative</span>
+        <span class="scattered-word" id="word9">is</span>
+        <span class="scattered-word" id="word10">hedge</span>
+        <span class="scattered-word" id="word11">betting</span>
+        <span class="scattered-word" id="word12">on</span>
+        <span class="scattered-word" id="word13">banked</span>
+        <span class="scattered-word" id="word14">futures</span>
+        <span class="scattered-word" id="word15">purchases</span>
+        <span class="scattered-word" id="word16">calculated</span>
+        <span class="scattered-word" id="word17">as</span>
+        <span class="scattered-word" id="word18">serious</span>
+        <span class="scattered-word" id="word19">investment</span>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div>Assignment #1: Remix</div>
+      <div class="footer-right">
+        By me, <a href="https://joshstrupp.com" target="_blank">Josh</a>
+      </div>
+    </div>
+  </body>
+</html>

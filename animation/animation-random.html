@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poem with Random Animations</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Junge&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="base-styles.css" />
+    <style>
+      .poem {
+        display: flex;
+        flex-direction: row;
+        gap: 8em;
+        justify-content: center;
+        max-width: 90vw;
+        margin: 0 auto;
+      }
+
+      .stanza {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        align-items: flex-start;
+        max-width: 45vw;
+      }
+
+      .line {
+        display: flex;
+        gap: 0.5em;
+        justify-content: flex-start;
+        position: relative;
+        border-left: 2px solid black;
+        padding-left: 0.75em;
+      }
+
+      .word {
+        display: inline-block;
+        font-size: clamp(12px, 2vw, 22px);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 160%;
+        letter-spacing: -0.275px;
+        opacity: 0;
+        position: relative;
+      }
+
+      /* First stanza - simple fade in */
+      .stanza:nth-child(1) .word {
+        animation: fadeIn 0.5s ease-in forwards;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* Fun animations for second stanza */
+      @keyframes flipIn {
+        0% {
+          opacity: 0;
+          transform: rotateX(90deg);
+        }
+        100% {
+          opacity: 1;
+          transform: rotateX(0deg);
+        }
+      }
+
+      @keyframes bounceIn {
+        0% {
+          opacity: 0;
+          transform: scale(0.3) translateY(-100px);
+        }
+        50% {
+          opacity: 0.5;
+          transform: scale(1.05) translateY(20px);
+        }
+        70% {
+          opacity: 0.7;
+          transform: scale(0.9) translateY(-10px);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1) translateY(0);
+        }
+      }
+
+      @keyframes spinIn {
+        0% {
+          opacity: 0;
+          transform: rotate(-720deg) scale(0);
+        }
+        100% {
+          opacity: 1;
+          transform: rotate(0) scale(1);
+        }
+      }
+
+      @keyframes swingIn {
+        0% {
+          opacity: 0;
+          transform: rotateZ(-45deg);
+          transform-origin: left bottom;
+        }
+        100% {
+          opacity: 1;
+          transform: rotateZ(0);
+          transform-origin: left bottom;
+        }
+      }
+
+      @keyframes elasticIn {
+        0% {
+          opacity: 0;
+          transform: scale(0);
+        }
+        60% {
+          opacity: 0.5;
+          transform: scale(1.2);
+        }
+        75% {
+          opacity: 0.7;
+          transform: scale(0.9);
+        }
+        90% {
+          opacity: 0.9;
+          transform: scale(1.05);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      @keyframes slideFlipIn {
+        0% {
+          opacity: 0;
+          transform: translateX(-100px) rotateY(90deg);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0) rotateY(0deg);
+        }
+      }
+
+      @keyframes rubberBand {
+        0% {
+          opacity: 0;
+          transform: scale3d(1, 1, 1);
+        }
+        30% {
+          opacity: 0.3;
+          transform: scale3d(1.25, 0.75, 1);
+        }
+        40% {
+          opacity: 0.4;
+          transform: scale3d(0.75, 1.25, 1);
+        }
+        50% {
+          opacity: 0.5;
+          transform: scale3d(1.15, 0.85, 1);
+        }
+        65% {
+          opacity: 0.65;
+          transform: scale3d(0.95, 1.05, 1);
+        }
+        75% {
+          opacity: 0.75;
+          transform: scale3d(1.05, 0.95, 1);
+        }
+        100% {
+          opacity: 1;
+          transform: scale3d(1, 1, 1);
+        }
+      }
+
+      @keyframes rollIn {
+        0% {
+          opacity: 0;
+          transform: translateX(-100%) rotate(-720deg);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0) rotate(0deg);
+        }
+      }
+
+      /* First stanza timing */
+      .stanza:nth-child(1) .line:nth-child(1) .word:nth-child(1) {
+        animation-delay: 0.5s;
+      }
+      .stanza:nth-child(1) .line:nth-child(2) .word:nth-child(1) {
+        animation-delay: 1s;
+      }
+      .stanza:nth-child(1) .line:nth-child(2) .word:nth-child(2) {
+        animation-delay: 1.5s;
+      }
+      .stanza:nth-child(1) .line:nth-child(2) .word:nth-child(3) {
+        animation-delay: 2s;
+      }
+      .stanza:nth-child(1) .line:nth-child(2) .word:nth-child(4) {
+        animation-delay: 2.5s;
+      }
+      .stanza:nth-child(1) .line:nth-child(3) .word:nth-child(1) {
+        animation-delay: 3s;
+      }
+      .stanza:nth-child(1) .line:nth-child(4) .word:nth-child(1) {
+        animation-delay: 3.5s;
+      }
+      .stanza:nth-child(1) .line:nth-child(4) .word:nth-child(2) {
+        animation-delay: 4s;
+      }
+      .stanza:nth-child(1) .line:nth-child(4) .word:nth-child(3) {
+        animation-delay: 4.5s;
+      }
+      .stanza:nth-child(1) .line:nth-child(4) .word:nth-child(4) {
+        animation-delay: 5s;
+      }
+      .stanza:nth-child(1) .line:nth-child(5) .word:nth-child(1) {
+        animation-delay: 5.5s;
+      }
+      .stanza:nth-child(1) .line:nth-child(6) .word:nth-child(1) {
+        animation-delay: 6s;
+      }
+      .stanza:nth-child(1) .line:nth-child(6) .word:nth-child(2) {
+        animation-delay: 6.5s;
+      }
+      .stanza:nth-child(1) .line:nth-child(6) .word:nth-child(3) {
+        animation-delay: 7s;
+      }
+      .stanza:nth-child(1) .line:nth-child(6) .word:nth-child(4) {
+        animation-delay: 7.5s;
+      }
+      .stanza:nth-child(1) .line:nth-child(7) .word:nth-child(1) {
+        animation-delay: 8s;
+      }
+      .stanza:nth-child(1) .line:nth-child(8) .word:nth-child(1) {
+        animation-delay: 8.5s;
+      }
+      .stanza:nth-child(1) .line:nth-child(8) .word:nth-child(2) {
+        animation-delay: 9s;
+      }
+      .stanza:nth-child(1) .line:nth-child(8) .word:nth-child(3) {
+        animation-delay: 9.5s;
+      }
+      .stanza:nth-child(1) .line:nth-child(8) .word:nth-child(4) {
+        animation-delay: 10s;
+      }
+      .stanza:nth-child(1) .line:nth-child(8) .word:nth-child(5) {
+        animation-delay: 10.5s;
+      }
+      .stanza:nth-child(1) .line:nth-child(8) .word:nth-child(6) {
+        animation-delay: 11s;
+      }
+      .stanza:nth-child(1) .line:nth-child(8) .word:nth-child(7) {
+        animation-delay: 11.5s;
+      }
+
+      /* Second stanza - random fun animations */
+      .stanza:nth-child(2) .line:nth-child(1) .word:nth-child(1) {
+        animation: bounceIn 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+        animation-delay: 12s;
+      }
+
+      .stanza:nth-child(2) .line:nth-child(2) .word:nth-child(1) {
+        animation: spinIn 1s ease-out forwards;
+        animation-delay: 12.5s;
+      }
+      .stanza:nth-child(2) .line:nth-child(2) .word:nth-child(2) {
+        animation: flipIn 1s ease-in-out forwards;
+        animation-delay: 13s;
+      }
+      .stanza:nth-child(2) .line:nth-child(2) .word:nth-child(3) {
+        animation: elasticIn 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+          forwards;
+        animation-delay: 13.5s;
+      }
+      .stanza:nth-child(2) .line:nth-child(2) .word:nth-child(4) {
+        animation: swingIn 1s ease-out forwards;
+        animation-delay: 14s;
+      }
+      .stanza:nth-child(2) .line:nth-child(2) .word:nth-child(5) {
+        animation: rollIn 1s ease-out forwards;
+        animation-delay: 14.5s;
+      }
+      .stanza:nth-child(2) .line:nth-child(2) .word:nth-child(6) {
+        animation: rubberBand 1.2s ease-in-out forwards;
+        animation-delay: 15s;
+      }
+
+      .stanza:nth-child(2) .line:nth-child(3) .word:nth-child(1) {
+        animation: slideFlipIn 1s ease-in-out forwards;
+        animation-delay: 15.5s;
+      }
+
+      .stanza:nth-child(2) .line:nth-child(4) .word:nth-child(1) {
+        animation: bounceIn 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+        animation-delay: 16s;
+      }
+      .stanza:nth-child(2) .line:nth-child(4) .word:nth-child(2) {
+        animation: spinIn 1s ease-out forwards;
+        animation-delay: 16.5s;
+      }
+      .stanza:nth-child(2) .line:nth-child(4) .word:nth-child(3) {
+        animation: elasticIn 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+          forwards;
+        animation-delay: 17s;
+      }
+      .stanza:nth-child(2) .line:nth-child(4) .word:nth-child(4) {
+        animation: flipIn 1s ease-in-out forwards;
+        animation-delay: 17.5s;
+      }
+      .stanza:nth-child(2) .line:nth-child(4) .word:nth-child(5) {
+        animation: swingIn 1s ease-out forwards;
+        animation-delay: 18s;
+      }
+      .stanza:nth-child(2) .line:nth-child(4) .word:nth-child(6) {
+        animation: rollIn 1s ease-out forwards;
+        animation-delay: 18.5s;
+      }
+
+      .stanza:nth-child(2) .line:nth-child(5) .word:nth-child(1) {
+        animation: rubberBand 1.2s ease-in-out forwards;
+        animation-delay: 19s;
+      }
+
+      .stanza:nth-child(2) .line:nth-child(6) .word:nth-child(1) {
+        animation: slideFlipIn 1s ease-in-out forwards;
+        animation-delay: 19.5s;
+      }
+      .stanza:nth-child(2) .line:nth-child(6) .word:nth-child(2) {
+        animation: bounceIn 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+        animation-delay: 20s;
+      }
+      .stanza:nth-child(2) .line:nth-child(6) .word:nth-child(3) {
+        animation: spinIn 1s ease-out forwards;
+        animation-delay: 20.5s;
+      }
+      .stanza:nth-child(2) .line:nth-child(6) .word:nth-child(4) {
+        animation: elasticIn 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+          forwards;
+        animation-delay: 21s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-left">
+        <div>"High Art" by Terence G. Craddock</div>
+      </div>
+      <div>Animation / Random</div>
+    </div>
+    <div class="poem">
+      <div class="stanza">
+        <div class="line">
+          <div class="word">critic</div>
+        </div>
+        <div class="line">
+          <div class="word">might</div>
+          <div class="word">imply</div>
+          <div class="word">an</div>
+          <div class="word">artist</div>
+        </div>
+        <div class="line">
+          <div class="word">due</div>
+        </div>
+        <div class="line">
+          <div class="word">to</div>
+          <div class="word">hand</div>
+          <div class="word">creator</div>
+          <div class="word">responsibility</div>
+        </div>
+        <div class="line">
+          <div class="word">must</div>
+        </div>
+        <div class="line">
+          <div class="word">strieve</div>
+          <div class="word">for</div>
+          <div class="word">reaction</div>
+          <div class="word">required</div>
+        </div>
+        <div class="line">
+          <div class="word">art</div>
+        </div>
+        <div class="line">
+          <div class="word">itself</div>
+          <div class="word">at</div>
+          <div class="word">bedrock</div>
+          <div class="word">is</div>
+          <div class="word">but</div>
+          <div class="word">an</div>
+          <div class="word">activity</div>
+        </div>
+      </div>
+
+      <div class="stanza">
+        <div class="line">
+          <div class="word">but</div>
+        </div>
+        <div class="line">
+          <div class="word">high</div>
+          <div class="word">art</div>
+          <div class="word">investment</div>
+          <div class="word">trend</div>
+          <div class="word">hot</div>
+          <div class="word">art</div>
+        </div>
+        <div class="line">
+          <div class="word">speculative</div>
+        </div>
+        <div class="line">
+          <div class="word">is</div>
+          <div class="word">hedge</div>
+          <div class="word">betting</div>
+          <div class="word">on</div>
+          <div class="word">banked</div>
+          <div class="word">futures</div>
+        </div>
+        <div class="line">
+          <div class="word">purchases</div>
+        </div>
+        <div class="line">
+          <div class="word">calculated</div>
+          <div class="word">as</div>
+          <div class="word">serious</div>
+          <div class="word">investment</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div>Assignment #1: Remix</div>
+      <div class="footer-right">
+        By me, <a href="https://joshstrupp.com" target="_blank">Josh</a>
+      </div>
+    </div>
+  </body>
+</html>
