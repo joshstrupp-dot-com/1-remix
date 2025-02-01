@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contrasting Poem</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Rubik+Bubbles&family=Lobster&family=Bungee+Shade&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="base-styles.css" />
+    <style>
+      .poem {
+        display: flex;
+        flex-direction: row;
+        gap: 2.5em;
+        justify-content: center;
+        max-width: 90vw;
+        margin: 0 auto;
+      }
+
+      .stanza {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        align-items: flex-start;
+        max-width: 45vw;
+      }
+
+      .stanza:first-child {
+        font-family: "Inter", sans-serif;
+        font-size: clamp(12px, 1.5vw, 16px);
+        line-height: 1.6;
+        font-weight: 400;
+        letter-spacing: -0.02em;
+      }
+
+      .line {
+        display: flex;
+        gap: 0.5em;
+        justify-content: flex-start;
+        position: relative;
+        margin-bottom: 10px;
+      }
+
+      /* Wild styling for the second stanza */
+      .stanza:last-child .line:nth-child(1) {
+        font-family: "Bungee Shade", cursive;
+        font-size: clamp(24px, 3vw, 48px);
+        color: #ff1493;
+      }
+
+      .stanza:last-child .line:nth-child(2) {
+        font-family: "Lobster", cursive;
+        font-size: clamp(20px, 2.5vw, 40px);
+        color: #4b0082;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .stanza:last-child .line:nth-child(3) {
+        font-family: "Rubik Bubbles", cursive;
+        font-size: clamp(22px, 2.8vw, 44px);
+        color: #ff4500;
+        transform: rotate(-2deg);
+      }
+
+      .stanza:last-child .line:nth-child(4) {
+        font-family: "Lobster", cursive;
+        font-size: clamp(18px, 2.2vw, 35px);
+        color: #9400d3;
+        text-shadow: 3px 3px 0px #ffd700;
+      }
+
+      .stanza:last-child .line:nth-child(5) {
+        font-family: "Rubik Bubbles", cursive;
+        font-size: clamp(26px, 3.2vw, 51px);
+        color: #ff1493;
+        transform: rotate(1deg);
+      }
+
+      .stanza:last-child .line:nth-child(6) {
+        font-family: "Bungee Shade", cursive;
+        font-size: clamp(19px, 2.4vw, 38px);
+        color: #4b0082;
+        letter-spacing: 0.05em;
+      }
+
+      .stanza:last-child .line {
+        margin-bottom: 20px;
+      }
+
+      @media screen and (max-width: 768px) {
+        .poem {
+          flex-direction: column;
+          align-items: center;
+          gap: 4em;
+        }
+
+        .stanza {
+          max-width: 80vw;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-left">
+        <div>"High Art" by Terence G. Craddock</div>
+      </div>
+      <div>Font Family / Contrast</div>
+    </div>
+
+    <div class="poem">
+      <div class="stanza">
+        <div class="line">critic</div>
+        <div class="line">might imply an artist</div>
+        <div class="line">due</div>
+        <div class="line">to hand creator responsibility</div>
+        <div class="line">must</div>
+        <div class="line">strive for reaction required</div>
+        <div class="line">art</div>
+        <div class="line">itself at bedrock is but an activity</div>
+      </div>
+
+      <div class="stanza">
+        <div class="line">but</div>
+        <div class="line">high art investment trend hot art</div>
+        <div class="line">speculative</div>
+        <div class="line">is hedge betting on banked futures</div>
+        <div class="line">purchases</div>
+        <div class="line">calculated as serious investment</div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div>Assignment #1: Remix</div>
+      <div class="footer-right">
+        By me, <a href="https://joshstrupp.com" target="_blank">Josh</a>
+      </div>
+    </div>
+  </body>
+</html>
