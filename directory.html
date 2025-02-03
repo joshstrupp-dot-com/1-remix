@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Examples Directory</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, sans-serif;
+        line-height: 1.6;
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        background-color: #f5f5f5;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 2rem;
+        color: #333;
+        font-size: 2.5rem;
+      }
+
+      .categories {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .category {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease;
+      }
+
+      .category:hover {
+        transform: translateY(-5px);
+      }
+
+      .category h2 {
+        color: #2c3e50;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid #e0e0e0;
+      }
+
+      .category ul {
+        list-style: none;
+      }
+
+      .category li {
+        margin: 0.5rem 0;
+      }
+
+      .category a {
+        color: #3498db;
+        text-decoration: none;
+        display: block;
+        padding: 0.5rem;
+        border-radius: 5px;
+        transition: background-color 0.2s ease;
+      }
+
+      .category a:hover {
+        background-color: #f0f0f0;
+        color: #2980b9;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS Examples Directory</h1>
+
+    <div class="categories">
+      <div class="category">
+        <h2>Animation</h2>
+        <ul>
+          <li>
+            <a href="animation/animation-commodity.html">Animation Commodity</a>
+          </li>
+          <li>
+            <a href="animation/animation-random.html">Animation Random</a>
+          </li>
+          <li>
+            <a href="animation/animation-typewriter.html"
+              >Animation Typewriter</a
+            >
+          </li>
+          <li><a href="animation/animation-fade.html">Animation Fade</a></li>
+        </ul>
+      </div>
+
+      <div class="category">
+        <h2>Mask</h2>
+        <ul>
+          <li><a href="mask/mask-art.html">Mask Art</a></li>
+          <li><a href="mask/mask-overlay.html">Mask Overlay</a></li>
+          <li><a href="mask/mask-difference.html">Mask Difference</a></li>
+          <li><a href="mask/mask-clip.html">Mask Clip</a></li>
+        </ul>
+      </div>
+
+      <div class="category">
+        <h2>Position</h2>
+        <ul>
+          <li><a href="position/position-sticky.html">Position Sticky</a></li>
+          <li><a href="position/position-art.html">Position Art</a></li>
+          <li><a href="position/position-variety.html">Position Variety</a></li>
+          <li><a href="position/position-scatter.html">Position Scatter</a></li>
+        </ul>
+      </div>
+
+      <div class="category">
+        <h2>Transform</h2>
+        <ul>
+          <li>
+            <a href="transform/transform-minimal.html">Transform Minimal</a>
+          </li>
+          <li><a href="transform/transform-skew.html">Transform Skew</a></li>
+          <li>
+            <a href="transform/transform-rotate.html">Transform Rotate</a>
+          </li>
+          <li><a href="transform/transform-3d.html">Transform 3D</a></li>
+        </ul>
+      </div>
+
+      <div class="category">
+        <h2>Font Family</h2>
+        <ul>
+          <li>
+            <a href="font-fam/font-fam-commodity.html">Font Family Commodity</a>
+          </li>
+          <li>
+            <a href="font-fam/font-fam-handwritten.html"
+              >Font Family Handwritten</a
+            >
+          </li>
+          <li><a href="font-fam/font-fam-emoji.html">Font Family Emoji</a></li>
+          <li>
+            <a href="font-fam/font-fam-contrast.html">Font Family Contrast</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
